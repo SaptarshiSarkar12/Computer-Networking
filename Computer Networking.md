@@ -12,10 +12,6 @@ The system of interconnected computers on a global scale, is called the Internet
 
 The cold war was going on between United States and the Soviet Union. The soviet union won in launching their first satelite, Sputnik 1 in 1957. The US Government then created a program called as ARPA (Advanced Research Projects Agency). They wanted to have a system of communication to communicate between the other buildings of the ARPA spread around the US. So, they created the ARPANET (The Advanced Research Projects Agency Network) which connected the MIT (Massachusetts Institute of Technology), Stanford University, UCLA (University of California, Los Angeles) and University of Utah. They used TCP/IP (Transmission Control Protocol) in the ARPANET. As time went by, more and more computers were connected. There was no way to automatically share the linked documents. Now, WWW (The World Wide Web) came up, which was developed by Timothy Berners-Lee. This project stored the documents and could be accessed across the web. Here's the [world's first website](http://info.cern.ch/hypertext/WWW/TheProject.html). But, there's no search engines. Now, search engines have been developed. The [Internet Society](https://www.internetsociety.org/) is responsible for maintaining the Internet.
 
-<h2 align='center'><i><u>Client-Server Architecture</i></u></h2>
-
-When we write [google.com](https://www.google.com/) in the address bar of the browser, our device sends a request to the google server which sends back a response.
-
 <h2 align='center'><i><u>Protocols</i></u></h2>
 
 1. **TCP (Transmission Control Protocol)** - It ensures that the complete data will reach the destination without any corruption.
@@ -173,7 +169,106 @@ You order for something on Amazon US, they recieves your order and ships your or
         - **Segmentation :** The data that is recieved from the session layer, is segmented. Every segment of the data will contain the sender's and reciever's port numbers, and the sequence numbers. Sequence number helps to reassemble the data in the correct order. 
         - **Flow Control :** The transport layer controls the amount of data that is transmitted.
         - **Error Control :** It checks whether the data is corrupted or missing or not using checksums attached to each data packets. 
+
+        **Connection-oriented service** and **connectionless service** takes place at the **reciever's end** in this layer.
     - **Network Layer** - It is responsible for the transmission of the data from one computer to another computer that is located in a different network. Here, router is present. The function os network layer is **Logical addressing**. Logical addressing is the assigning of sender's and reciever's IP Address to each of the data segments and it forms an **IP Packet**, so that all the data packets can reach the correct destination. It performs **routing** which is the movement of the data packet from source to destination. Load balancing also happens here.
     - **Data Link Layer** - It helps to directly communicate with the computers. Physical Addressing happens here. It is the assigning of MAC Address of the sender and reciever's device to the data packets, forming **frames**. MAC address is a 12 digit alphanumeric number of the network interface of your device. It also controls how the data is recieved using Media Access Control.
-    - **Physical Layer** - This is the hardware layer which transports the data through wires to the reciever.
+    - **Physical Layer** - This is the hardware layer which transports the data through wires to the reciever.<p>
+
+    ![OSI Model](https://miro.medium.com/max/1200/1*17Zz6v0HWIzgiOzQYmO6lA.jpeg) <p>
+
+- <h3 align='left'><b>TCP/IP Model :</b></h2>
+    This model was developed by ARPA. There are 5 layers in this model ~
+    - **Application Layer** - Users interact with this. Whatsapp, browsers etc. lie here. It is on your devices.
+    - **Transport Layer** - 
+    - **Network Layer** - 
+    - **Data Link Layer** - 
+    - **Physical Layer** - 
+
+<h2 align='center'><i><u>Client-Server Architecture</i></u></h2>
+
+When we write [google.com](https://www.google.com/) in the address bar of the browser, our device sends a request to the google server which sends back a response.
+Server is a system that controls the website you are hosting. There are processes running on client and server which communicate with each other.
+Client are the people who requests for something on the server.
+Collection of huge number servers in a company on a global scale is called a data centre. It might have static IP Address and has high upload speed. 
+Ping measures the round-trip time from the client to the server and back to it.
+
+<h2 align='center'><i><u>Peer To Peer (P2P) Architecture</i></u></h2>
+
+Applications running on various devices get connected to each other, and there is no large server or data centre. *For Example* - In college, computers can be connected to each other without having a dedicated server. It is a decentralized network.
+The advantage is it is easily scalable. *Example* - BitTorrent.
+It might have centralized database as well.
+
+<h2 align='center'><i><u>Network Devices</i></u></h2>
+
+There are lots of devices which are use to communicate with devices these devices
+called Networking Devices. There are **Internal**, **External** and **Portable** Devices.
+
+**Internal Devices** :
+- Network interface controller (NIC)
+- Wireless Network Interface Controller
+- Bluetooth Dongle
+
+**External Devices**
+- Hub
+- Switches
+- Routers
+- Brouters
+- Bridges
+- Repeater
+- Modem
+- Gateway
+- WIFI-Routers or Broadband Routers
+
+**Portable Devices**
+- WIFI-Hotspot
+- Portable Modem Dongle <p>
+
+Here is those devices in details :
+1. <u>**Repeater**</u> - Repeater is use to extend the range of radio signal so that the signal can cover longer distances. **A repeater is an electronic device that receives a signal and re transmits it**. Repeater is used for wired medium (example - telephone line repeater, fiber optical cable repeater etc.) as well as wireless medium (example - satellite repeater, microwave repeater, wifi repeater, LTE repeater etc.).
+
+    **Types of Repeater** :
+    - Analog Repeater
+    - Digital Repeater
+    - Microwave Repeater
+    - Satellite Repeater
+    - WiFI Repeater | WLAN Repeater
+    - LTE Repeater
+    - Optical Repeater <p>
     
+    ![Repeater](https://th.bing.com/th/id/R.7a67341a896ba87e216748a90b8732c2?rik=m3CPQ1%2bPq7doPA&riu=http%3a%2f%2fd1unzhqf5a606m.cloudfront.net%2fimages%2flarge%2fhoneywell-wrex-wifi-repeater-extender.png%3f1389738305&ehk=LlBNJN1QOEwZQU1qEoYw%2bEnut%2bOG0hZ3WwEIZXhZibE%3d&risl=&pid=ImgRaw&r=0)
+
+2. <u>**Modems**</u> - Modems are electronic devices which convert digital information of computers into analog signals and are also capable of again converting the analog signals to the digital information at the receiving end. Modems can be classified in various ways. Some of the common types include - **half-duplex modem**, **full-duplex modem**, **2-wire modem**, **4-wire modem**, **synchronous** and **asynchronous modem**.
+Modem stands for **Modulator and Demodulator device** which assists computer in transferring data and information over telephone lines. This is done by changing the **digital data into
+analog signal** which can be transferred over the phone lines. In the receiver end, it again **converts the analog signal into the digital data**. Therefore simply, it acts as a modulator when it converts digital data into analog signal and it works as a demodulator when it converts analog signal to digital data.
+There are modems having **Asymmetric digital subscriber line (ADSL)** and some not supporting ADSL (identified with DSL led blinker on panel).
+
+    **Types of Modems :** 
+    - based on location
+        - Onboard Modem
+        - Internal Modem
+        - External Modem
+        - Removable Modem
+
+    - based on its working
+        - Half duplex Modem
+        - Full Duplex Modem
+        - 2 wire modem
+        - 4 wire modem
+        - Synchronous Modem
+        - Asynchronous Modem <p>
+
+    ![Modem](https://www.samm.com/userfiles/editor/image/optical-modem-gpon-fk-ont-g400b-poe-s2-furukawa-2.png)
+
+
+3. <u>**Gateway**</u> - A gateway is not a hardware device. It is **software firmware** which saves the **configuration setting of a device**. Mostly the gateway address in routers is **192.168.0.1** or **192 168.1.1**.
+Its acts as a "**gate**" between two networks. It may be a router, firewall, server, or other device that enables traffic to flow in and out of the network. While a gateway protects
+the nodes within network, it itself is also a node.
+
+    ![Gateway](https://5.imimg.com/data5/JA/YO/MY-10051435/industrial-iot-gateway-with-lora-500x500.png)
+
+4. <u>**WIFI-Routers**</u> - Similar to a modem with the additional feature of Wireless connectivity called as "WIFI ".It generally has 4 ethernet ports and it is having routing DHCP to connect 240 pc and devices providing internet with wired and wireless options.
+    ![WiFi Router](https://www.netgear.com/images/Products/Networking/WirelessRouters/R6230/R6230_Hero_Transparent.png)
+
+4. <u>**Hubs**</u> - A hub is a device to which all the devices sharing a physical network can be physically connected to form a "Local Area Network" or "LAN". Hubs enable the electric currents from a computer to pass to all other devices connected to it. Since a hub was the electronic equivalent of shouting in a room as necessary, as the number of devices increased, the number of collisions increased and LAN performance ground to a hault. In a hub-centric environment, the message packets being sent by each device that is connected to the hub can be "seen" by every other
+device on the hub whether they are involved in the conversation or not. So, hubs can facilitate message eavesdropping.
