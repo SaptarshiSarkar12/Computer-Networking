@@ -92,11 +92,11 @@ There are submarine cables lied in the oceans and waterbodies, connecting variou
 
 **DNS** *(Domain Name Server)* - It is a type of phonebook which converts the domain name into the registered IP Address of that domain.
 
-There are also something like Tier-1 ISP , Tier-2 ISP, etc.
-In India, Tier-1 ISP is TATA.
+There are also something like Tier-1 ISP , Tier-2 ISP, and so on.
+In India, Tier-1 ISP is TATA, BSNL, etc.
 
 <h2 align='center'>Topologies</h2>
 
 1. **Bus Topology -** Only one person can send data at a time.
 ![Bus Topology Diagram](https://thumbs.dreamstime.com/b/bus-topology-diagram-29007878.jpg)
-2. **Ring Topology -**
+2. **Ring Topology -** 
