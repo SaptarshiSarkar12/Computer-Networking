@@ -35,15 +35,7 @@ Internet Service Provider (ISP) gives you a modem/router which has a global IP A
 When we request a server (Google server in this case), it can see the global IP Address and not the Local IP Address. It sends the response and the modem/router decides which device to send back the response, using NAT (Network Address Translation) Protocol. **IP Adddress** decides which device to send the data and **Port Number** determines which application requested the data. 
 
 <h2 align='center'><i><u>Port Numbers</i></u></h2>
-
-Port Number is a 16-bit number. Total port numbers possible are 2<sup>16</sup> = 65536. All the HTTP stuffs that we do are done on port 80. 
-
-Port Numbers from -
- - **0 - 1023** are reserved already for HTTP stuffs.
- - **1024 - 49152** are registered for some specific applications. *Example -* SQL runs on port **1433**.
- - **49152 - 65536** can be used by you.
-
-**What it means by Network speed?** </br>
+What it means by Network speed?
 Suppose you are having an internet speed of -
 - 1 mbps = 10<sup>6</sup> bits/second.
 - 1 gbps = 10<sup>9</sup> bits/second.
@@ -313,174 +305,193 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 - <h3 align='left'><b>TCP/IP Model :</b></h2>
     This model was developed by ARPA. There are 5 layers in this model ~
 
-    - **Application Layer** - Users interact with this. Whatsapp, browsers etc. lie here. It is on your devices.
-        - Network Protocols : Protocols are set of rules used in the internet.
+    1. **<u>Application Layer</u>** - Users interact with this. Whatsapp, browsers etc. lie here. It is on your devices.
+        - ***Application Layer Network Protocols*** : Protocols are set of rules used in the internet. The Protocols which are commonly used in the Application Layer are given below.
 
-            1. **<u>Application layer network protocols :</u>** The Protocols which are commonly used in the Application Layer are given below.
-
-                - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. 
+            - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. 
     
-                    In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
+                In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
     
-                    <u>**Advantages :**</u>
-
-                        • Centralized management of IP addresses.
-                        • Seamless addition of new clients into a network.
-                        • Reuse of IP addresses, reducing the total number of IP addresses required.
-
-                    <u>**Disadvantages :**</u>
-
-                        • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
-                        • Computers with DHCP cannot be used as servers, as their IPs change over time.            
-                </p>
-
-                - **DNS (Domain Name System protocol)** - The DNS protocol helps in **translating or mapping host names to IP addresses**. DNS works on a **client-server model**, and uses a **distributed database** over a hierarchy of name servers. 
-    
-                    Hosts are identified based on their IP addresses, but memorizing an IP address is difficult due to its complexity. IPs are also dynamic, making it all the more necessary to map domain names to IP addresses. DNS helps resolve this issue by **converting the domain names of websites into numerical IP addresses**.
-    
-                    <u>**Advantages :**</u>
-
-                        • DNS facilitates internet access.
-                        • Eliminates the need to memorize IP addresses.
-
-                    <u>**Disadvantages :**</u>
-
-                        • DNS queries don't carry information pertaining to the client who initiated it. This is because the DNS server only sees the IP from where the query came from, making the server susceptible to manipulation from hackers.
-                        • DNS root servers, if compromised, could enable hackers to redirect to other pages for phishing data.
-                <p>
-
-                - **FTP (File Transfer Protocol)** - File Transfer Protocol enables **file sharing between hosts, both local and remote**, and **runs on top of TCP**. For file transfer, FTP **creates two TCP connections: control and data connection**. 
-    
-                    The control connection is used to **transfer control information like passwords, commands to retrieve and store files, etc.**, and the data connection is used to **transfer the actual file**. Both of these connections run in **parallel** during the entire file transfer process.
-
-                    <u>**Advantages :**</u>
-
-                        • Enables sharing large files and multiple directories at the same time.
-                        • Lets you resume file sharing if it was interrupted.
-                        • Lets you recover lost data, and schedule a file transfer.
-
-                    <u>**Disadvantages :**</u>
-
-                        • FTP lacks security. Data, usernames, and passwords are transferred in plain text, making them vulnerable to malicious actors.
-                        • FTP lacks encryption capabilities, making it non-compliant with industry standards.
-                <p>
-
-                - **HTTP (Hyper Text Transfer Protocol)** - HTTP is an application layer protocol used for **distributed, collaborative, and hypermedia information systems**. It works on a **client-server model**, where the web browser acts as the client. Data such as text, images, and other multimedia files are shared over the World Wide Web using HTTP. As a request and response type protocol, the client sends a request to the server, which is then processed by the server before sending a response back to the client.
-
-                    HTTP is a **stateless protocol**, meaning the client and server are only aware of each other while the connection between them is intact. After that, both the client and server forget about each other's existence. Due to this phenomenon, the client and server **can't both retain information between requests**. 
-
-                    <u>**HTTP Methods**</u> - This are telling servers what to do.
-                    - GET : Requesting a data.
-                    - POST : Giving something to the server, like form data.
-                    - PUT : Puts data at a specific location in the server.
-                    - DELETE : It deletes a resource on the server. 
-
-                    <u>**Status Code**</u> - Status Code tells what happened to our request.
-
-                    - 1XX -> Informational.
-                    - 2XX -> Success codes.
-                    - 3XX -> Redirection purposes.
-                    - 4XX -> Client error.
-                    - 5XX -> Server error.
-
-                    <u>**Cookies**</u> - It is a unique string stored in the client's browser.
-
-                    <u>**Advantages :**</u>
-
-                        • Memory usage and CPU usage are low because of lesser concurrent connections.
-                        • Errors can be reported without closing connections.
-                        • Owing to lesser TCP connections, network congestion is reduced.
-
-                    <u>**Disadvantages :**</u>
-
-                        • HTTP lacks encryption capabilities, making it less secure.
-                        • HTTP requires more power to establish communication and transfer data.
-                <p>
-
-                - **IMAP and IMAP4 (Internet Message Access Protocol (version 4))** - IMAP is an **email protocol** that lets end users **access and manipulate messages** stored on a mail server from their email client as if they were present locally on their remote device. IMAP follows a **client-server model**, and **lets multiple clients access messages on a common mail server concurrently**. IMAP includes **operations for creating, deleting, and renaming mailboxes; checking for new messages; permanently removing messages; setting and removing flags**; and much more. The current version of IMAP is version 4 revision 1.
-
-                    <u>**Advantages :**</u>
-
-                        • As the emails are stored on the mail server, local storage utilization is minimal.
-                        • In case of accidental deletion of emails or data, it is always possible to retrieve them as they are stored on the mail server.
-
-                    <u>**Disadvantages :**</u>
-
-                        • Emails won't work without an active internet connection.
-                        • High utilization of emails by end users requires more mailbox storage, thereby augmenting costs.
-                <p>
-
-                - **POP and POP3 (Post Office Protocol (version 3))** - The Post Office Protocol is also **an email protocol**. Using this protocol, the end user can **download emails from the mail server to their own email client**. Once the emails are downloaded locally, they **can be read without an internet connection**. Also, **once the emails are moved locally, they get deleted from the mail server, freeing up space**. POP3 is **NOT designed to perform extensive manipulations with the messages on the mail server, unlike IMAP4**. POP3 is the latest version of the Post Office Protocol.
-
-                    <u>**Advantages :**</u>
-
-                        • Read emails on local devices without internet connection.
-                        • The mail server need not have high storage capacity, as the emails get deleted when they're moved locally.
-                    <u>**Disadvantages :**</u>
-
-                        • If the local device on which the emails were downloaded crashes or gets stolen, the emails are lost.
-                <p>
-
-                - **SMTP (Simple Mail Transfer Protocol)** - SMTP is a protocol designed to **transfer electronic mail reliably and efficiently**. SMTP is a **push protocol** and is used to **send the email**, whereas **POP and IMAP are used to retrieve emails on the end user's side**. SMTP **transfers emails between systems, and notifies on incoming emails**. ***<u>Using SMTP, a client can transfer an email to another client on the same network or another network through a relay or gateway access available to both networks</u>***.
-
-                    <u>**Advantages :**</u>
-
-                        • Ease of installation.
-                        • Connects to any system without any restriction.
-                        • It doesn't need any development from your side.
-
-                    <u>**Disadvantages :**</u>
-
-                        • Back and forth conversations between servers can delay sending a message, and also increases the chance of the message not being delivered.
-                        • Certain firewalls can block the ports used with SMTP.
-                <p>
-
-                - **Telnet (Terminal emulation protocol)** - Telnet is an application layer protocol that enables a user to **communicate with a remote device**. A Telnet client is installed on the user's machine, which **accesses the command line interface of another remote machine that runs a Telnet server program**.
-
-                    Telnet is mostly used by **network administrators to access and manage remote devices**. To access a remote device, a network admin needs to enter the **IP or host name of the remote device**, after which they will be presented with a **virtual terminal that can interact with the host**.
-
-                    <u>**Advantages :**</u>
-
-                        • Compatible with multiple operating systems.
-                        • Saves a lot of time due to its swift connectivity with remote devices.
-
-                    <u>**Disadvantages :**</u>
-
-                        • Telnet lacks encryption capabilities and sends across critical information in clear text, making it easier for malicious actors.
-                        • Expensive due to slow typing speeds.
-                <p>
-
-                - **SNMP (Simple Network Management Protocol)** - SNMP is an application layer protocol used to **manage nodes, like servers, workstations, routers, switches**, etc., on an IP network. SNMP enables network admins to **monitor network performance, identify network glitches, and troubleshoot them**. SNMP protocol is comprised of three components: a **managed device**, an **SNMP agent**, and an **SNMP manager**.
-
-        The SNMP agent resides on the **managed device**. The agent is a **software module** that has local knowledge of management information, and **translates that information into a form compatible with the SNMP manager**. The SNMP manager presents the data obtained from the SNMP agent, helping network admins **manage nodes effectively**.
-
-        Currently, there are **three versions** of SNMP: SNMP **v1**, SNMP **v2**, and SNMP **v3**. Both versions 1 and 2 have many features in common, but SNMP v2 offers enhancements such as additional protocol operations. **SNMP version 3 (SNMP v3) adds security and remote configuration capabilities** to the previous versions.
-                </p>
-    </br>
-
-2. **<u>Presentation layer network protocols</u> :**
-    - **LPP (Lightweight Presentation Protocol)** - The Lightweight Presentation Protocol helps provide **streamlined support for OSI application services** in networks **running on TCP/IP protocols** for some constrained environments. LPP is designed for a particular class of OSI applications, namely those entities whose application context contains only an **Association Control Service Element (ACSE) and a Remote Operations Service Element (ROSE)**. LPP is not applicable to entities whose application context is more extensive, i.e., contains a **Reliable Transfer Service Element**.
-
-    </p>
-    </br>
-
-3. **<u>Session layer network protocols</u> :**
-    - **RPC (Remote Procedure Call protocol)** - RPC is a protocol for **requesting a service from a program in a remote computer through a network**, and can be used **without having to understand the underlying network technologies**. RPC **uses TCP or UDP** for **carrying the messages between communicating programs**. RPC also works on **client-server model**. The **requesting program** is the **client**, and the **service providing program** is the **server**.
-
                 <u>**Advantages :**</u>
 
-                    • RPC omits many protocol layers to improve performance.
-                    • With RPC, code rewriting or redeveloping efforts are minimized.
+                    • Centralized management of IP addresses.
+                    • Seamless addition of new clients into a network.
+                    • Reuse of IP addresses, reducing the total number of IP addresses required.
 
                 <u>**Disadvantages :**</u>
 
-                    • Not yet proven to work effectively over wide-area networks.
-                    • Apart from TCP/IP, RPC does not support other transport protocols.
-    </p>
-    </br>
+                    • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
+                    • Computers with DHCP cannot be used as servers, as their IPs change over time.            
+            </p>
 
-4. **<u>Transport layer network protocols</u> :**
-    - **TCP (Transmission Control Protocol)** - TCP is a transport layer protocol that provides a **reliable stream delivery and virtual connection service to applications through the use of sequenced acknowledgement**. TCP is a **connection-oriented protocol**, as it requires a **connection to be established between applications before data transfer**. Through flow control and acknowledgement of data, **TCP provides extensive error checking**. TCP ensures **sequencing of data**, meaning the data packets arrive in order at the receiving end. **Retransmission of lost data packets is also feasible with TCP**.
+            - **DNS (Domain Name System protocol)** - The DNS protocol helps in **translating or mapping host names to IP addresses**. DNS works on a **client-server model**, and uses a **distributed database** over a hierarchy of name servers. When we visit a website for the first time, the IP Address of the website is stored in the local cache. Suppose, the IP Address is not found in the local cache, then it will be looked in the local DNS Server (ISP has all info about all websites you visit even if in incognito mode) which is the first point of contact. If the IP Address is not found there, it will be looked for in the root server and if not found even, it will be looked in the top-level domain. After getting the IP, the website server is connected.
+
+
+                <u>**Classes of Domains**</u>
+
+                ![Part/Class of Domain](https://searchfacts.com/wp-content/uploads/2019/07/domain-name-parts.png)
+
+                - **Top-level domain** - Root DNS Servers. They have top-level domains like .io, .org, .com, etc. The authorities maintaing this root DNS server can be seen in this website - [Root-servers.org](https://root-servers.org/). The top-level domains are registered by [ICANN](https://www.icann.org/) (The Internet Corporation for Assigned Names and Numbers).
+
+                - **Second level Domain** - The top-level domains themselves have domains like student.io, commclassroom.org, google.com, etc.
+
+                Hosts are identified based on their IP addresses, but memorizing an IP address is difficult due to its complexity. IPs are also dynamic, making it all the more necessary to map domain names to IP addresses. DNS helps resolve this issue by **converting the domain names of websites into numerical IP addresses**.
+
+                <u>**Advantages :**</u>
+
+                    • DNS facilitates internet access.
+                    • Eliminates the need to memorize IP addresses.
+
+                <u>**Disadvantages :**</u>
+
+                    • DNS queries don't carry information pertaining to the client who initiated it. This is because the DNS server only sees the IP from where the query came from, making the server susceptible to manipulation from hackers.
+                    • DNS root servers, if compromised, could enable hackers to redirect to other pages for phishing data.
+            <p>
+
+            - **FTP (File Transfer Protocol)** - File Transfer Protocol enables **file sharing between hosts, both local and remote**, and **runs on top of TCP**. For file transfer, FTP **creates two TCP connections: control and data connection**. 
+
+                The control connection is used to **transfer control information like passwords, commands to retrieve and store files, etc.**, and the data connection is used to **transfer the actual file**. Both of these connections run in **parallel** during the entire file transfer process.
+
+                <u>**Advantages :**</u>
+
+                    • Enables sharing large files and multiple directories at the same time.
+                    • Lets you resume file sharing if it was interrupted.
+                    • Lets you recover lost data, and schedule a file transfer.
+
+                <u>**Disadvantages :**</u>
+
+                    • FTP lacks security. Data, usernames, and passwords are transferred in plain text, making them vulnerable to malicious actors.
+                    • FTP lacks encryption capabilities, making it non-compliant with industry standards.
+            <p>
+
+            - **HTTP (Hyper Text Transfer Protocol)** - HTTP is an application layer protocol used for **distributed, collaborative, and hypermedia information systems**. It works on a **client-server model**, where the web browser acts as the client. Data such as text, images, and other multimedia files are shared over the World Wide Web using HTTP. As a request and response type protocol, the client sends a request to the server, which is then processed by the server before sending a response back to the client.
+
+                HTTP is a **stateless protocol**, meaning the client and server are only aware of each other while the connection between them is intact. After that, both the client and server forget about each other's existence. Due to this phenomenon, the client and server **can't both retain information between requests**. 
+
+                <u>**HTTP Methods**</u> - This tells the servers what to do.
+                - GET : Requesting a data.
+                - POST : Giving something to the server, like form data.
+                - PUT : Puts data at a specific location in the server.
+                - DELETE : It deletes a resource on the server. 
+
+                <u>**Status Code**</u> - Status Code tells what happened to our request.
+
+                - 1XX -> Informational.
+                - 2XX -> Success codes.
+                - 3XX -> Redirection purposes.
+                - 4XX -> Client error.
+                - 5XX -> Server error.
+
+                <u>**Cookies**</u> - It is a file containing unique string stored in the client's browser. When a website is visited first, a cookie is set. Next time, whenever a new request is made to that website, the cookie will be set in the request headers.                    
+                Third-party cookies : Cookies that are set for the URLs that you don't know.
+
+                <u>**Advantages :**</u>
+
+                    • Memory usage and CPU usage are low because of lesser concurrent connections.
+                    • Errors can be reported without closing connections.
+                    • Owing to lesser TCP connections, network congestion is reduced.
+
+                <u>**Disadvantages :**</u>
+
+                    • HTTP lacks encryption capabilities, making it less secure.
+                    • HTTP requires more power to establish communication and transfer data.
+            <p>
+
+            - **IMAP and IMAP4 (Internet Message Access Protocol (version 4))** - IMAP is an **email protocol** that lets end users **access and manipulate messages** stored on a mail server from their email client as if they were present locally on their remote device. IMAP follows a **client-server model**, and **lets multiple clients access messages on a common mail server concurrently**. IMAP includes **operations for creating, deleting, and renaming mailboxes; checking for new messages; permanently removing messages; setting and removing flags**; and much more. The current version of IMAP is version 4 revision 1.
+
+                <u>**Advantages :**</u>
+
+                    • As the emails are stored on the mail server, local storage utilization is minimal.
+                    • In case of accidental deletion of emails or data, it is always possible to retrieve them as they are stored on the mail server.
+
+                <u>**Disadvantages :**</u>
+
+                    • Emails won't work without an active internet connection.
+                    • High utilization of emails by end users requires more mailbox storage, thereby augmenting costs.
+            <p>
+
+            - **POP and POP3 (Post Office Protocol (version 3))** - The Post Office Protocol is also **an email protocol**. Using this protocol, the end user can **download emails from the mail server to their own email client**. Once the emails are downloaded locally, they **can be read without an internet connection**. Also, **once the emails are moved locally, they get deleted from the mail server, freeing up space**. POP3 is **NOT designed to perform extensive manipulations with the messages on the mail server, unlike IMAP4**. POP3 is the latest version of the Post Office Protocol.
+
+                <u>**Advantages :**</u>
+
+                    • Read emails on local devices without internet connection.
+                    • The mail server need not have high storage capacity, as the emails get deleted when they're moved locally.
+                <u>**Disadvantages :**</u>
+
+                    • If the local device on which the emails were downloaded crashes or gets stolen, the emails are lost.
+            <p>
+
+            - **SMTP (Simple Mail Transfer Protocol)** - SMTP is a protocol designed to **transfer electronic mail reliably and efficiently**. SMTP is a **push protocol** and is used to **send the email**, whereas **POP and IMAP are used to retrieve emails on the end user's side**. SMTP **transfers emails between systems, and notifies on incoming emails**. ***<u>Using SMTP, a client can transfer an email to another client on the same network or another network through a relay or gateway access available to both networks</u>***.
+
+                <u>**How E-Mail works?**</u>
+
+                For sending e-mail, SMTP protocol is used.
+                Sender sends the e-mail to the sender's SMTP server. The e-mail stays the there for a while, then the sender's server connects to the reciever's SMTP server. This happens only when the sender and reciever are not using the same e-mail platform like only google, or only yahoo, etc. When the reciever logs in to the recievers client, the e-mail from the reciever's server is downloaded into the client which the reciever can view. For recieving e-mails, POP (Post Office Protocol) protocol is used. At first, the client authorizes with the reciever's POP server and then transact the e-mails. Later, the e-mails are updated. The folders like sent items and draft folder is NOT downloaded by POP. 
+
+                <u>**Advantages :**</u>
+
+                    • Ease of installation.
+                    • Connects to any system without any restriction.
+                    • It doesn't need any development from your side.
+
+                <u>**Disadvantages :**</u>
+
+                    • Back and forth conversations between servers can delay sending a message, and also increases the chance of the message not being delivered.
+                    • Certain firewalls can block the ports used with SMTP.
+            <p>
+
+            - **Telnet (Terminal emulation protocol)** - Telnet is an application layer protocol that enables a user to **communicate with a remote device**. A Telnet client is installed on the user's machine, which **accesses the command line interface of another remote machine that runs a Telnet server program**.
+
+                Telnet is mostly used by **network administrators to access and manage remote devices**. To access a remote device, a network admin needs to enter the **IP or host name of the remote device**, after which they will be presented with a **virtual terminal that can interact with the host**.
+
+                <u>**Advantages :**</u>
+
+                    • Compatible with multiple operating systems.
+                    • Saves a lot of time due to its swift connectivity with remote devices.
+
+                <u>**Disadvantages :**</u>
+
+                    • Telnet lacks encryption capabilities and sends across critical information in clear text, making it easier for malicious actors.
+                    • Expensive due to slow typing speeds.
+            <p>
+
+            - **SNMP (Simple Network Management Protocol)** - SNMP is an application layer protocol used to **manage nodes, like servers, workstations, routers, switches**, etc., on an IP network. SNMP enables network admins to **monitor network performance, identify network glitches, and troubleshoot them**. SNMP protocol is comprised of three components: a **managed device**, an **SNMP agent**, and an **SNMP manager**.
+
+                The SNMP agent resides on the **managed device**. The agent is a **software module** that has local knowledge of management information, and **translates that information into a form compatible with the SNMP manager**. The SNMP manager presents the data obtained from the SNMP agent, helping network admins **manage nodes effectively**.
+
+                Currently, there are **three versions** of SNMP: SNMP **v1**, SNMP **v2**, and SNMP **v3**. Both versions 1 and 2 have many features in common, but SNMP v2 offers enhancements such as additional protocol operations. **SNMP version 3 (SNMP v3) adds security and remote configuration capabilities** to the previous versions.
+            </p>
+            </br>
+
+        - **Sockets** : Socket is the interface between two processes for the purpose of communication. Each socket has a **specific address**. This address is composed of an **IP address and a port number**. Socket are generally employed in **client server applications**.
+
+            <u>**Types of Sockets**</u> - There are two types of Sockets - the **datagram socket** and the **stream socket**.
+
+            1. **Datagram Socket :** This is a type of network which has **connection less point** for sending and receiving packets. It is similar to mailbox. The letters (data) posted into the box are collected and delivered (transmitted) to a letterbox (receiving socket).
+
+            2. **Stream Socket :** In Computer operating system, a stream socket is type of **interprocess communications socket** or **network socket** which provides a **connection-oriented**, **sequenced**, and **unique flow of data** without record boundaries with well defined mechanisms for creating and destroying connections and for detecting errors. It is similar to phone. A connection is established between the phones (two ends) and a conversation (transfer of data) takes place.
+    
+        - **Ports** : Port Number is a 16-bit number. Total port numbers possible are 2<sup>16</sup> = 65536. All the HTTP stuffs that we do are done on port 80. 
+        
+            Port Numbers from -
+            - **0 - 1023** are reserved already for HTTP stuffs.
+            - **1024 - 49151** are registered for some specific applications. *Example -* SQL runs on port **1433**.
+            - **49152 - 65536** can be used by you.Ports tell us which application we are working on/ which application the data should go. 
+
+            **Ephemeral Ports** determine which process / instance the data will be recieved in the client side. Servers at most times have fixed port numbers.
+
+
+    2. **<u>Transport Layer</u>** - The transport layer is responsible for the **transportation of the data from the *network* to the *application***. It is located in your device. When a resource needs to be send, it is given to the socket which gives to the transport layer multiplexer. **Multiplexer** allows us to send multiple things to multiple destinations (might be in the same device). This is called **multiplexing**. **De-multiplexer** allows us to recieve multiple things from multiple destinations. This is called **demultiplexing**. De-multiplexer gives the data to the cocerned socket. The Transport Layer attaches the socket port numbers to the data packets. It also take care of congestion control using congestion control algorithms built in TCP.        
+        - ***Checksum*** : A particular string value is created from the data sent. When the data is recieved at the other end, it's checksum is calculated. As the sender has attached the checksum calculated by him in the data packets, then, if the checksums match, it's okay, else, something has gone wrong.
+
+        - ***Timers*** : When a data packet is sent, the timer is started in the sender's device. When the confirmation is recieved, the timer ends. Suppose the second packet sent gets lost, the timer once started, expires after sometime. That's how you can know which data packet has been lost. This timer is known as **Retransmission timer**.
+
+        - ***Sequence Numbers*** : A value/number for the unique identification of data packets, is called sequence numbers. This is useful for identification of duplicate data packets at the reciever's end, if the same packet is retransmitted by the sender for not recieving the acknowledgement message for that packet.
+        - ***Transport layer network protocols*** : The protocols used in the transport layer are - 
+            - **TCP (Transmission Control Protocol)** - TCP is a transport layer protocol that provides a **reliable stream delivery and virtual connection service to applications through the use of sequenced acknowledgement**. TCP is a **connection-oriented protocol**, as it requires a **connection to be established between applications before data transfer**. Through flow control and acknowledgement of data, **TCP provides extensive error checking**. TCP ensures **sequencing of data**, meaning the data packets arrive in order at the receiving end. **Retransmission of lost data packets is also feasible with TCP**. TCP segments (divides into chunks) the data recieved from the application layer and add headers to it, and re-assemble and put the data recieved into one. Congestion in the network and error is controlled. It maintains the order of data using sequence numbers. It is bi-directional. There can be only two end-points. It adds sequence and acknowledgement number to the data.
+
+                <U>**3-way handshake**</u>
+                The client sends a connection request to the server with a **sychronization flag** (a value added in the header) and a **sequence number** (**Random Numbers** to prevent hackers to guess the number)(Suppose, 32). The server then sends the sychronization flag (as it is a new connection), **acknowledgement flag** and acknowledgement number(1 added to the previous sequence number, here, 32 + 1 = 33) along with the new **sequence number**(Suppose, 56) generated after some mathametical operations done on the previous sequence number. Client then sends the **Acknowledgement flag** along with the new sequence number (1 added to the first sequence number sent by it, here, 32 + 1 = 33) and the acknowledgement number (1 added to the previous sequence number, here, 56 + 1 = 57). Then, the connection is established. There are other flags like reset and finish.
 
                 <u>**Advantages :**</u>
 
@@ -490,9 +501,13 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                 <u>**Disadvantages :**</u>
 
                     • TCP cannot be used for broadcast and multicast connections.
-    </p>
+            </p>
 
-    - **UDP (User Datagram Protocol)** - UDP is a **connection-less transport layer protocol** that provides a **simple but unreliable message service**. Unlike TCP, UDP adds **NO reliability, flow control, or error recovery functions**. UDP is useful in situations where the reliability mechanisms of TCP are not necessary. Retransmission of lost data packets **isn't possible** with UDP.
+            - **UDP (User Datagram Protocol)** - UDP is a **connection-less protocol** that provides a **simple but unreliable message service**. Unlike TCP, UDP adds **NO reliability, flow control, or error recovery functions**. UDP is useful in situations where the reliability mechanisms of TCP are not necessary. Retransmission of lost data packets **isn't possible** with UDP. Here, data ***may or may not be delivered, may change and may not be in order.*** UDP uses checksum to know whether the data is corrupted or not, but does nothing about those.
+
+                One UDP packet sontains the **data(65536 bytes)** along with the headers containing the **source and destination port numbers(2 + 2 = 4 bytes), length of the datagram(2 bytes) and the checksum (2 bytes)**.
+
+                *<u>Uses of UDP</u>* - Video Conference, DNS and gaming.
 
                 <u>**Advantages :**</u>
 
@@ -503,11 +518,14 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
                     • In UDP, it's possible that a packet may not be delivered, be delivered twice, or not be delivered at all.
                     • Manual disintegration of data packets is needed.
-    </p>
-    </br>
 
-5. **<u>Network layer protocols</u> :**
-    - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a 32-bit address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
+    3. **<u>Network layer</u> :** Here, we work with routers. This layer helps in the data transmission from source to destination. The **routing table** is a table inside the router containing information about the topology of the network immediately around it. The data packet will contain the data along with the source network layer address. The router checks whether the data is for a device connected to it or not. If not, then the router checks it's **forwarding table(Or MAC Table)** to find in which direction and to which router the data should go. This goes on until the data recieves the correct router. This is called **hop-by-hop** architecture. Routing table contains multiple paths, whereas forwarding table contains one path, thus it's more faster. Every router has it's own network addresses or Logical addresses.
+        - Parts Of IP Addresses -         
+            ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png)
+            Here, the Network ID also known as Network address, tells which network your device resides in. The Device ID is your device address.
+
+        - ***Network Layer Protocols*** : The protocols used by network layer are - 
+            - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a 32-bit address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
 
                 <u>**Advantages :**</u>
 
@@ -517,9 +535,9 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                 <u>**Disadvantages :**</u>
 
                     • IPv4 is labor intensive, complex, and prone to errors.
-    <p>
+            <p>
 
-    - **IPv6 (Internet Protocol version 6)** - IPv6 is the latest version of the Internet Protocol, a network layer protocol that possesses addressing and control information for enabling packets to be routed in the network. IPv6 was created to deal with IPv4 exhaustion. It increases the **IP address size from 32 bits to 128 bits** to support more levels of addressing.
+            - **IPv6 (Internet Protocol version 6)** - IPv6 is the latest version of the Internet Protocol, a network layer protocol that possesses addressing and control information for enabling packets to be routed in the network. IPv6 was created to deal with IPv4 exhaustion. It increases the **IP address size from 32 bits to 128 bits** to support more levels of addressing.
 
                 <u>**Advantages :**</u>
 
@@ -530,9 +548,9 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
                     • IPv6 is not compatible with machines that run on IPv4.
                     • Challenge in upgrading the devices to IPv6.
-    <p>
+            <p>
 
-    - **ICMP (Internet Control Message Protocol)** - ICMP is a network layer supporting protocol used by network devices to **send error messages and operational information**. <u>***ICMP messages delivered in IP packets are used for out-of-band messages related to network operation or misoperation***</u>. ICMP is used to **announce network errors, congestion, and timeouts, as well assist in troubleshooting.**
+            - **ICMP (Internet Control Message Protocol)** - ICMP is a network layer supporting protocol used by network devices to **send error messages and operational information**. <u>***ICMP messages delivered in IP packets are used for out-of-band messages related to network operation or misoperation***</u>. ICMP is used to **announce network errors, congestion, and timeouts, as well assist in troubleshooting.**
 
                 <u>**Advantages :**</u>
 
@@ -542,264 +560,17 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
                     • Sending a lot of ICMP messages increases network traffic.
                     • End users are affected if malicious users send many ICMP destination unreachable packets.
-    </p>
-    </br>
+            </p>
+            </br>
 
 6. **<u>Data link layer network protocols</u> :**
     - **ARP (Address Resolution Protocol)** - The Address Resolution Protocol helps **map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network**. A table called an **ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address**. ***ARP offers the rules to make these correlations, and helps convert addresses in both directions.***
 
-                <u>**Advantages :**</u>
-
-                    • MAC addresses need not be known or memorized, as the ARP cache contains all the MAC addresses and maps them automatically with IPs.
-
-                <u>**Disadvantages :**</u>
-
-                    • ARP is susceptible to security attacks called ARP spoofing attacks.
-                    • When using ARP, sometimes a hacker might be able to stop the traffic altogether. This is also known as ARP denial-of-services.
-    <p>
-
-    - **SLIP (Serial Line IP)** - SLIP is used for **point-to-point serial connections using TCP/IP**. SLIP is used on **dedicated serial links**, and sometimes for **dial-up purposes**. SLIP is useful for **allowing mixes of hosts and routers to communicate with one another**; for example, **host-host, host-router, and router-router** are all common SLIP network configurations. SLIP is merely a **packet framing protocol**: It defines a **sequence of characters that frame IP packets on a serial line**. It does **NOT provide addressing, packet type identification, error detection or correction, or compression mechanisms.**
-
-                <u>**Advantages :**</u>
-
-                    • Since it has a small overhead, it is suitable for usage in microcontrollers.
-                    • It reuses existing dial-up connections and telephone lines.
-                    • It's easy to deploy since it's based on the Internet Protocol.
-
-                <u>**Disadvantages :**</u>
-
-                    • SLIP doesn't support automatic setup of network connections in multiple OSI layers at the same time.
-                    • SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
-
-
-    
-    - **Transport Layer** - 
-    - **Network Layer** - 
-    - **Data Link Layer** - 
-    - **Physical Layer** - 
-
-<h2 align='center'><i><u>Network Protocols</i></u></h2>
-Protocol is a set of rules used in the Internet.
-
-1. **<u>Application layer network protocols :</u>** The Protocols which are commonly used in the Application Layer are given below ~
-    - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. 
-    
-        In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
-    
-        **Advantages :**
-
-            • Centralized management of IP addresses.
-            • Seamless addition of new clients into a network.
-            • Reuse of IP addresses, reducing the total number of IP addresses required.
-
-        **Disadvantages :**
-
-            • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
-            • Computers with DHCP cannot be used as servers, as their IPs change over time.            
-    </p>
-
-    - **DNS (Domain Name System protocol)** - The DNS protocol helps in **translating or mapping host names to IP addresses**. DNS works on a **client-server model**, and uses a **distributed database** over a hierarchy of name servers. 
-    
-        Hosts are identified based on their IP addresses, but memorizing an IP address is difficult due to its complexity. IPs are also dynamic, making it all the more necessary to map domain names to IP addresses. DNS helps resolve this issue by **converting the domain names of websites into numerical IP addresses**.
-    
-        **Advantages :**
-
-            • DNS facilitates internet access.
-            • Eliminates the need to memorize IP addresses.
-            
-        **Disadvantages :**
-
-            • DNS queries don't carry information pertaining to the client who initiated it. This is because the DNS server only sees the IP from where the query came from, making the server susceptible to manipulation from hackers.
-            • DNS root servers, if compromised, could enable hackers to redirect to other pages for phishing data.
-
-    - **FTP (File Transfer Protocol)** - File Transfer Protocol enables **file sharing between hosts, both local and remote**, and **runs on top of TCP**. For file transfer, FTP **creates two TCP connections: control and data connection**. 
-    
-        The control connection is used to **transfer control information like passwords, commands to retrieve and store files, etc.**, and the data connection is used to **transfer the actual file**. Both of these connections run in **parallel** during the entire file transfer process.
-
-        **Advantages :**
-
-            • Enables sharing large files and multiple directories at the same time.
-            • Lets you resume file sharing if it was interrupted.
-            • Lets you recover lost data, and schedule a file transfer.
-
-        **Disadvantages :**
-
-            • FTP lacks security. Data, usernames, and passwords are transferred in plain text, making them vulnerable to malicious actors.
-            • FTP lacks encryption capabilities, making it non-compliant with industry standards.
-    <p>
-
-    - **HTTP (Hyper Text Transfer Protocol)** - HTTP is an application layer protocol used for **distributed, collaborative, and hypermedia information systems**. It works on a **client-server model**, where the web browser acts as the client. Data such as text, images, and other multimedia files are shared over the World Wide Web using HTTP. As a request and response type protocol, the client sends a request to the server, which is then processed by the server before sending a response back to the client.
-
-        HTTP is a **stateless protocol**, meaning the client and server are only aware of each other while the connection between them is intact. After that, both the client and server forget about each other's existence. Due to this phenomenon, the client and server **can't both retain information between requests**.
-
-        **Advantages :**
-
-            • Memory usage and CPU usage are low because of lesser concurrent connections.
-            • Errors can be reported without closing connections.
-            • Owing to lesser TCP connections, network congestion is reduced.
-
-        **Disadvantages :**
-
-            • HTTP lacks encryption capabilities, making it less secure.
-            • HTTP requires more power to establish communication and transfer data.
-    <p>
-
-    - **IMAP and IMAP4 (Internet Message Access Protocol (version 4))** - IMAP is an **email protocol** that lets end users **access and manipulate messages** stored on a mail server from their email client as if they were present locally on their remote device. IMAP follows a **client-server model**, and **lets multiple clients access messages on a common mail server concurrently**. IMAP includes **operations for creating, deleting, and renaming mailboxes; checking for new messages; permanently removing messages; setting and removing flags**; and much more. The current version of IMAP is version 4 revision 1.
-
-        **Advantages :**
-
-            • As the emails are stored on the mail server, local storage utilization is minimal.
-            • In case of accidental deletion of emails or data, it is always possible to retrieve them as they are stored on the mail server.
-
-        **Disadvantages :**
-
-            • Emails won't work without an active internet connection.
-            • High utilization of emails by end users requires more mailbox storage, thereby augmenting costs.
-    <p>
-
-    - **POP and POP3 (Post Office Protocol (version 3))** - The Post Office Protocol is also **an email protocol**. Using this protocol, the end user can **download emails from the mail server to their own email client**. Once the emails are downloaded locally, they **can be read without an internet connection**. Also, **once the emails are moved locally, they get deleted from the mail server, freeing up space**. POP3 is **NOT designed to perform extensive manipulations with the messages on the mail server, unlike IMAP4**. POP3 is the latest version of the Post Office Protocol.
-
-        **Advantages :**
-
-            • Read emails on local devices without internet connection.
-            • The mail server need not have high storage capacity, as the emails get deleted when they're moved locally.
-        **Disadvantages :**
-
-            • If the local device on which the emails were downloaded crashes or gets stolen, the emails are lost.
-    <p>
-
-    - **SMTP (Simple Mail Transfer Protocol)** - SMTP is a protocol designed to **transfer electronic mail reliably and efficiently**. SMTP is a **push protocol** and is used to **send the email**, whereas **POP and IMAP are used to retrieve emails on the end user's side**. SMTP **transfers emails between systems, and notifies on incoming emails**. ***<u>Using SMTP, a client can transfer an email to another client on the same network or another network through a relay or gateway access available to both networks</u>***.
-
-        **Advantages :**
-
-            • Ease of installation.
-            • Connects to any system without any restriction.
-            • It doesn't need any development from your side.
-
-        **Disadvantages :**
-
-            • Back and forth conversations between servers can delay sending a message, and also increases the chance of the message not being delivered.
-            • Certain firewalls can block the ports used with SMTP.
-    <p>
-
-    - **Telnet (Terminal emulation protocol)** - Telnet is an application layer protocol that enables a user to **communicate with a remote device**. A Telnet client is installed on the user's machine, which **accesses the command line interface of another remote machine that runs a Telnet server program**.
-
-        Telnet is mostly used by **network administrators to access and manage remote devices**. To access a remote device, a network admin needs to enter the **IP or host name of the remote device**, after which they will be presented with a **virtual terminal that can interact with the host**.
-
-        **Advantages :**
-
-            • Compatible with multiple operating systems.
-            • Saves a lot of time due to its swift connectivity with remote devices.
-
-        **Disadvantages :**
-
-            • Telnet lacks encryption capabilities and sends across critical information in clear text, making it easier for malicious actors.
-            • Expensive due to slow typing speeds.
-    <p>
-
-    - **SNMP (Simple Network Management Protocol)** - SNMP is an application layer protocol used to **manage nodes, like servers, workstations, routers, switches**, etc., on an IP network. SNMP enables network admins to **monitor network performance, identify network glitches, and troubleshoot them**. SNMP protocol is comprised of three components: a **managed device**, an **SNMP agent**, and an **SNMP manager**.
-
-        The SNMP agent resides on the **managed device**. The agent is a **software module** that has local knowledge of management information, and **translates that information into a form compatible with the SNMP manager**. The SNMP manager presents the data obtained from the SNMP agent, helping network admins **manage nodes effectively**.
-
-        Currently, there are **three versions** of SNMP: SNMP **v1**, SNMP **v2**, and SNMP **v3**. Both versions 1 and 2 have many features in common, but SNMP v2 offers enhancements such as additional protocol operations. **SNMP version 3 (SNMP v3) adds security and remote configuration capabilities** to the previous versions.
-    </p>
-    </br>
-
-2. **<u>Presentation layer network protocols</u> :**
-    - **LPP (Lightweight Presentation Protocol)** - The Lightweight Presentation Protocol helps provide **streamlined support for OSI application services** in networks **running on TCP/IP protocols** for some constrained environments. LPP is designed for a particular class of OSI applications, namely those entities whose application context contains only an **Association Control Service Element (ACSE) and a Remote Operations Service Element (ROSE)**. LPP is not applicable to entities whose application context is more extensive, i.e., contains a **Reliable Transfer Service Element**.
-
-    </p>
-    </br>
-
-3. **<u>Session layer network protocols</u> :**
-    - **RPC (Remote Procedure Call protocol)** - RPC is a protocol for **requesting a service from a program in a remote computer through a network**, and can be used **without having to understand the underlying network technologies**. RPC **uses TCP or UDP** for **carrying the messages between communicating programs**. RPC also works on **client-server model**. The **requesting program** is the **client**, and the **service providing program** is the **server**.
-
-        **Advantages :**
-
-            • RPC omits many protocol layers to improve performance.
-            • With RPC, code rewriting or redeveloping efforts are minimized.
-
-        **Disadvantages :**
-
-            • Not yet proven to work effectively over wide-area networks.
-            • Apart from TCP/IP, RPC does not support other transport protocols.
-    </p>
-    </br>
-
-4. **<u>Transport layer network protocols</u> :**
-    - **TCP (Transmission Control Protocol)** - TCP is a transport layer protocol that provides a **reliable stream delivery and virtual connection service to applications through the use of sequenced acknowledgement**. TCP is a **connection-oriented protocol**, as it requires a **connection to be established between applications before data transfer**. Through flow control and acknowledgement of data, **TCP provides extensive error checking**. TCP ensures **sequencing of data**, meaning the data packets arrive in order at the receiving end. **Retransmission of lost data packets is also feasible with TCP**.
-
-        **Advantages :**
-
-            • TCP ensures three things: data reaches the destination, reaches it on time, and reaches it without duplication.
-            • TCP automatically breaks data into packets before transmission.
-
-        **Disadvantages :**
-
-            • TCP cannot be used for broadcast and multicast connections.
-    </p>
-
-    - **UDP (User Datagram Protocol)** - UDP is a **connection-less transport layer protocol** that provides a **simple but unreliable message service**. Unlike TCP, UDP adds **NO reliability, flow control, or error recovery functions**. UDP is useful in situations where the reliability mechanisms of TCP are not necessary. Retransmission of lost data packets **isn't possible** with UDP.
-
-        **Advantages :**
-
-            • Broadcast and multicast connections are possible with UDP.
-            • UDP is faster than TCP.
-
-        **Disadvantages :**
-
-            • In UDP, it's possible that a packet may not be delivered, be delivered twice, or not be delivered at all.
-            • Manual disintegration of data packets is needed.
-    </p>
-    </br>
-
-5. **<u>Network layer protocols</u> :**
-    - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a 32-bit address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
-
-        **Advantages :**
-
-            • IPv4 encrypts data to ensure privacy and security.
-            • With IP, routing data becomes more scalable and economical.
-
-        **Disadvantages :**
-
-            • IPv4 is labor intensive, complex, and prone to errors.
-    <p>
-
-    - **IPv6 (Internet Protocol version 6)** - IPv6 is the latest version of the Internet Protocol, a network layer protocol that possesses addressing and control information for enabling packets to be routed in the network. IPv6 was created to deal with IPv4 exhaustion. It increases the **IP address size from 32 bits to 128 bits** to support more levels of addressing.
-
-        **Advantages :**
-
-            • More efficient routing and packet processing compared to IPv4.
-            • Better security compared to IPv4.
-
-        **Disadvantages :**
-
-            • IPv6 is not compatible with machines that run on IPv4.
-            • Challenge in upgrading the devices to IPv6.
-    <p>
-
-    - **ICMP (Internet Control Message Protocol)** - ICMP is a network layer supporting protocol used by network devices to **send error messages and operational information**. <u>***ICMP messages delivered in IP packets are used for out-of-band messages related to network operation or misoperation***</u>. ICMP is used to **announce network errors, congestion, and timeouts, as well assist in troubleshooting.**
-
-        **Advantages :**
-
-            • ICMP is used to diagnose network issues.
-
-        **Disadvantages :**
-
-            • Sending a lot of ICMP messages increases network traffic.
-            • End users are affected if malicious users send many ICMP destination unreachable packets.
-    </p>
-    </br>
-
-6. **<u>Data link layer network protocols</u> :**
-    - **ARP (Address Resolution Protocol)** - The Address Resolution Protocol helps **map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network**. A table called an **ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address**. ***ARP offers the rules to make these correlations, and helps convert addresses in both directions.***
-
-        **Advantages :**
+        <u>**Advantages :**</u>
 
             • MAC addresses need not be known or memorized, as the ARP cache contains all the MAC addresses and maps them automatically with IPs.
 
-        **Disadvantages :**
+        <u>**Disadvantages :**</u>
 
             • ARP is susceptible to security attacks called ARP spoofing attacks.
             • When using ARP, sometimes a hacker might be able to stop the traffic altogether. This is also known as ARP denial-of-services.
@@ -807,32 +578,16 @@ Protocol is a set of rules used in the Internet.
 
     - **SLIP (Serial Line IP)** - SLIP is used for **point-to-point serial connections using TCP/IP**. SLIP is used on **dedicated serial links**, and sometimes for **dial-up purposes**. SLIP is useful for **allowing mixes of hosts and routers to communicate with one another**; for example, **host-host, host-router, and router-router** are all common SLIP network configurations. SLIP is merely a **packet framing protocol**: It defines a **sequence of characters that frame IP packets on a serial line**. It does **NOT provide addressing, packet type identification, error detection or correction, or compression mechanisms.**
 
-        **Advantages :**
+        <u>**Advantages :**</u>
 
             • Since it has a small overhead, it is suitable for usage in microcontrollers.
             • It reuses existing dial-up connections and telephone lines.
             • It's easy to deploy since it's based on the Internet Protocol.
 
-        **DIsadvantages :**
+        <u>**Disadvantages :**</u>
 
             • SLIP doesn't support automatic setup of network connections in multiple OSI layers at the same time.
             • SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
 
 
-<h2 align='center'><i><u>Sockets</i></u></h2>
-
- Socket is the interface between two processes for the purpose of communication. Each socket has a specific address. This address is composed of an IP address and a port number. Socket are generally employed in client server applications.
-
-<u>**Types of Sockets**</u> - There are two types of Sockets - the **datagram socket** and the **stream socket**.
-
-1. **Datagram Socket :** This is a type of network which has **connection less point** for sending and receiving packets. It is similar to mailbox. The letters (data) posted into the box are collected and delivered (transmitted) to a letterbox (receiving socket).
-
-2. **Stream Socket :** In Computer operating system, a stream socket is type of **interprocess communications socket** or **network socket** which provides a **connection-oriented**, **sequenced**, and **unique flow of data** without record boundaries with well defined mechanisms for creating and destroying connections and for detecting errors. It is similar to phone. A connection is established between the phones (two ends) and a conversation (transfer of data) takes place.
-
-<h2 align='center'><i><u>Ports</i></u></h2>
-
-Ports tell us which application we are working on/ which application the data should go.
-
-Ephemeral Ports determine which process / instance the data will be recieved in the client side.
-
-Servers have fixed ports 
+    - **Physical Layer** - 
