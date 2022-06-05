@@ -383,7 +383,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                     - 4XX -> Client error.
                     - 5XX -> Server error.
 
-                    <u>**Cookies**</u> - 
+                    <u>**Cookies**</u> - It is a unique string stored in the client's browser.
 
                     <u>**Advantages :**</u>
 
