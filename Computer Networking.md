@@ -575,7 +575,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
             </p>
             </br>
 
-    4. **<u>Data link layer</u> :** The data link layer is responsible for sending the data packets recieved from the network layer, over a physical layer.
+    4. **<u>Data link layer</u> :** The data link layer is responsible for sending the data packets recieved from the network layer, over a physical layer. Router attaches the correct private IP Address to the data packets recieved, ensuring that the data recieves the correct destination.
 
     - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. The DHCP server is a pool of IP Addresses and it assigns IP Addresses to the devices connected.
     
@@ -592,7 +592,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                     • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
                     • Computers with DHCP cannot be used as servers, as their IPs change over time.         
 
-    - **Data Link Layer Address** - Two computers at the data link layer communicate with each other using the data link layer address, might happen manually or automatically. ARP(Address Resolution Protocol) cache is used to find out the data link layer address. the frames(Data link layer address of sender and IP Address of destination along with the data) are sent to all the devices connected to the same network.
+    - **Data Link Layer Address Or MAC Address** - MAC Address depend on the network interface. Two computers at the data link layer communicate with each other using the data link layer address, might happen manually or automatically. ARP(Address Resolution Protocol) cache is used to find out the data link layer address. the frames(Data link layer address of sender and IP Address of destination along with the data) are sent to all the devices connected to the same network.
 
     - **Data Link Layer Protocols** - The protocols used in data link layer are :
         - **ARP (Address Resolution Protocol)** - The Address Resolution Protocol helps **map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network**. A table called an **ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address**. ***ARP offers the rules to make these correlations, and helps convert addresses in both directions.***
@@ -621,4 +621,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                 • SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
 
 
-    - **Physical Layer** - 
+    5. **Physical Layer** - Network layer works **very close** to the physical layer. This layer contains the physical devices like routers which transports the data to the destination. This is where the **bit synchronization**(number of bits sent and received per unit of time remains consistent) takes place.
+
+
+-------------------------------------------------------------------------- END -----------------------------------------------------------------
