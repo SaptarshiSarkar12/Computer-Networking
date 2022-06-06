@@ -5,10 +5,10 @@ This documentation is made from [Kunal Kushwaha's Computer Networking course](ht
 
 <h2 align='center'><i><u>Introduction</i></u></h2>
 
-**Computer Network -** 
+**<u>Computer Network -</u>** 
 Computers connected together is a computer network.
 
-**Internet -**
+**<u>Internet -</u>**
 The system of interconnected computers on a global scale, is called the Internet.
 
 <h2 align='center'><i><u>How Internet Was Developed?</i></u></h2>
@@ -146,26 +146,6 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
 **Here's an example to understand the network :**
 You order for something on Amazon US, they recieves your order and ships your order to the delivery company of US. Then it is transported and it has arrived India. It is sent to the delivery company who then sends the order to you.
 
-<h2 align='center'><i><u>How The Internet Works?</u></i></h2>
-
-- <h3 align='left'><b>OSI Model :</b></h3>
-    The OSI Model stands for Open Systems Interconnection Model. It was developed as a standard of how people and computers interact. There are 7 layers in the OSI Model ~
-
-    - **Application Layer** - It is implemented in softwares. Users will send the data to the software in this layer. Protocols used here include HTTP, FTP, Telnet etc.
-    - **Presentation Layer** - The data is translated into machine representable binary code. This is known as **translation**. The data goes under encoding, compression and encryption. It also provides abstraction. Here, SSL (Secure Socket Layer) protocol is used.
-    - **Session Layer** - The Session Layer helps in setting up and managing the connections. It enables the sending and recieving of data followed by termination of connected sessions. Authentication is done in this layer. Then, authorization (Checking whether you have the permission to access any resource on the server) is done.
-    - **Transport Layer** - UDP and TCP Protocol is used in this layer. The transport layer transports the data in three ways -
-        - **Segmentation :** The data recieved from the session layer, is segmented. Every segment of the data will contain the sender's and reciever's port numbers, and the sequence numbers. Sequence number helps to reassemble the data in the correct order. 
-        - **Flow Control :** The transport layer controls the amount of data that is transmitted.
-        - **Error Control :** It checks whether the data is corrupted or missing or not using **checksums** attached to each data packets. 
-
-        **Connection-oriented service** and **connectionless service** takes place at the **reciever's end** in this layer.
-    - **Network Layer** - It is responsible for the transmission of the data from one computer to another computer that is located in a different network. Here, router is present. The function of network layer is **Logical addressing**. Logical addressing is the assigning of sender's and reciever's IP Address to each of the data segments and it forms an **IP Packet**, so that all the data packets can reach the correct destination. It performs **routing** which is the movement of the data packet from source to destination. Load balancing also happens here.
-    - **Data Link Layer** - It helps to directly communicate with the computers. Physical Addressing happens here. It is the assigning of MAC Address of the sender and reciever's device to the data packets, forming **frames**. MAC address is a 12 digit alphanumeric number of the network interface of your device. It also controls how the data is recieved using Media Access Control.
-    - **Physical Layer** - This is the hardware layer which transports the data through wires to the reciever.<p>
-
-    ![OSI Model](https://miro.medium.com/max/1200/1*17Zz6v0HWIzgiOzQYmO6lA.jpeg) <p>
-
 <h2 align='center'><i><u>Client-Server Architecture</i></u></h2>
 
 When we write [google.com](https://www.google.com/) in the address bar of the browser, our device sends a request to the google server which sends back a response.
@@ -205,7 +185,7 @@ called Networking Devices. There are **Internal**, **External** and **Portable**
 - WIFI-Hotspot
 - Portable Modem Dongle <p>
 
-Here is those devices in details :
+Here are those devices in details :
 1. <u>**Repeater**</u> - Repeater is use to extend the range of radio signal so that the signal can cover longer distances. **A repeater is an electronic device that receives a signal and re transmits it**. **It does not amplify the signal**. Repeater is used for wired medium (example - telephone line repeater, fiber optical cable repeater etc.) as well as wireless medium (example - satellite repeater, microwave repeater, wifi repeater, LTE repeater etc.).
 
     **Types of Repeater** :
@@ -305,13 +285,33 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     2. If the bridge receives a frame whose node MAC address is of the connected network, it will forward the frame toward it.
 
-- <h3 align='left'><b>TCP/IP Model :</b></h2>
+
+<h2 align='center'><i><u>How The Internet Works?</u></i></h2>
+
+- <h3 align='left'><b>OSI Model :</b></h3>
+    The OSI Model stands for Open Systems Interconnection Model. It was developed as a standard of how people and computers interact. There are 7 layers in the OSI Model ~
+
+    - **Application Layer** - It is implemented in softwares. Users will send the data to the software in this layer. Protocols used here include HTTP, FTP, Telnet etc.
+    - **Presentation Layer** - The data is translated into machine representable binary code. This is known as **translation**. The data goes under encoding, compression and encryption. It also provides abstraction. Here, SSL (Secure Socket Layer) protocol is used.
+    - **Session Layer** - The Session Layer helps in setting up and managing the connections. It enables the sending and recieving of data followed by termination of connected sessions. Authentication is done in this layer. Then, authorization (Checking whether you have the permission to access any resource on the server) is done.
+    - **Transport Layer** - UDP and TCP Protocol is used in this layer. The transport layer transports the data in three ways -
+        - **Segmentation :** The data recieved from the session layer, is segmented. Every segment of the data will contain the sender's and reciever's port numbers, and the sequence numbers. Sequence number helps to reassemble the data in the correct order. 
+        - **Flow Control :** The transport layer controls the amount of data that is transmitted.
+        - **Error Control :** It checks whether the data is corrupted or missing or not using **checksums** attached to each data packets. 
+
+        **Connection-oriented service** and **connectionless service** takes place at the **reciever's end** in this layer.
+    - **Network Layer** - It is responsible for the transmission of the data from one computer to another computer that is located in a different network. Here, router is present. The function of network layer is **Logical addressing**. Logical addressing is the assigning of sender's and reciever's IP Address to each of the data segments and it forms an **IP Packet**, so that all the data packets can reach the correct destination. It performs **routing** which is the movement of the data packet from source to destination. Load balancing also happens here.
+    - **Data Link Layer** - It helps to directly communicate with the computers. Physical Addressing happens here. It is the assigning of MAC Address of the sender and reciever's device to the data packets, forming **frames**. MAC address is a 12 digit alphanumeric number of the network interface of your device. It also controls how the data is recieved using Media Access Control.
+    - **Physical Layer** - This is the hardware layer which transports the data through wires to the reciever.<p>
+
+    ![OSI Model](https://miro.medium.com/max/1200/1*17Zz6v0HWIzgiOzQYmO6lA.jpeg) <p>
+
+- <h3 align='left'><b>TCP/IP Model :</b></h3>
     This model was developed by ARPA. There are 5 layers in this model ~
 
-    1. **<u>Application Layer</u>** - Users interact with this. Whatsapp, browsers etc. lie here. It is on your devices.
+    1. **<u>Application Layer</u>** - Users interact with this. WhatsApp, browsers etc. lie here. It is on your devices.
         - ***Application Layer Network Protocols*** : Protocols are set of rules used in the internet. The Protocols which are commonly used in the Application Layer are given below.
             - **DNS (Domain Name System protocol)** - The DNS protocol helps in **translating or mapping host names to IP addresses**. DNS works on a **client-server model**, and uses a **distributed database** over a hierarchy of name servers. When we visit a website for the first time, the IP Address of the website is stored in the local cache. Suppose, the IP Address is not found in the local cache, then it will be looked in the local DNS Server (ISP has all info about all websites you visit even if in incognito mode) which is the first point of contact. If the IP Address is not found there, it will be looked for in the root server and if not found even, it will be looked in the top-level domain. After getting the IP, the website server is connected.
-
 
                 <u>**Classes of Domains**</u>
 
