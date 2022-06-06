@@ -307,23 +307,6 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     1. **<u>Application Layer</u>** - Users interact with this. Whatsapp, browsers etc. lie here. It is on your devices.
         - ***Application Layer Network Protocols*** : Protocols are set of rules used in the internet. The Protocols which are commonly used in the Application Layer are given below.
-
-            - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. 
-    
-                In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
-    
-                <u>**Advantages :**</u>
-
-                    • Centralized management of IP addresses.
-                    • Seamless addition of new clients into a network.
-                    • Reuse of IP addresses, reducing the total number of IP addresses required.
-
-                <u>**Disadvantages :**</u>
-
-                    • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
-                    • Computers with DHCP cannot be used as servers, as their IPs change over time.            
-            </p>
-
             - **DNS (Domain Name System protocol)** - The DNS protocol helps in **translating or mapping host names to IP addresses**. DNS works on a **client-server model**, and uses a **distributed database** over a hierarchy of name servers. When we visit a website for the first time, the IP Address of the website is stored in the local cache. Suppose, the IP Address is not found in the local cache, then it will be looked in the local DNS Server (ISP has all info about all websites you visit even if in incognito mode) which is the first point of contact. If the IP Address is not found there, it will be looked for in the root server and if not found even, it will be looked in the top-level domain. After getting the IP, the website server is connected.
 
 
@@ -519,13 +502,40 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
                     • In UDP, it's possible that a packet may not be delivered, be delivered twice, or not be delivered at all.
                     • Manual disintegration of data packets is needed.
 
-    3. **<u>Network layer</u> :** Here, we work with routers. This layer helps in the data transmission from source to destination. The **routing table** is a table inside the router containing information about the topology of the network immediately around it. The data packet will contain the data along with the source network layer address. The router checks whether the data is for a device connected to it or not. If not, then the router checks it's **forwarding table(Or MAC Table)** to find in which direction and to which router the data should go. This goes on until the data recieves the correct router. This is called **hop-by-hop** architecture. Routing table contains multiple paths, whereas forwarding table contains one path, thus it's more faster. Every router has it's own network addresses or Logical addresses.
-        - Parts Of IP Addresses -         
+    3. **<u>Network layer</u> :** Here, we work with routers. This layer helps in the data transmission from source to destination. The **routing table** is a table inside the router containing information about the topology of the network immediately around it. The data packet will contain the data along with the source network layer address. The router checks whether the data is for a device connected to it or not. If not, then the router checks it's **forwarding table(Or MAC Table)** to find in which direction and to which router the data should go. This goes on until the data recieves the correct router. This is called **hop-by-hop** architecture. This hoping happens at ISPs. Routing table contains multiple paths, whereas forwarding table contains one path, thus it's more faster. Every router has it's own network addresses or Logical addresses.
+        - ***Parts Of IP Addresses*** -         
             ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png)
             Here, the Network ID also known as Network address, tells which network your device resides in. The Device ID is your device address.
 
+        - ***Control Plane*** - Control plane is used to create the routing tables. **Control Plane is like a very big graph** in which the **nodes are the routers** and the **edges are the links between routers**. Two types of routing are used to create routing tables :
+            - **Static Routing** - Addresses are added ***manually***. This is time consuming and not adaptable easily.
+            - **Dynamic Routing** - If there is a change in the addresses or network, addresses are modified ***automatically***. Algorithms used here include Bellman-Ford algorithm, Dijkstra's algorithm, etc.
+
+        - ***Subnetting*** - ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png)
+            Here, the Network ID is the subnet ID. All the devices connected to that router having that subnet ID, will have the same subnet IDs and differ only in Host IDs.
+
+        - ***Class Of IP Addresses*** - There are five classes (basically denoting a range of IP addresses) of IP Addresses : 
+            - ***Class A*** - from **0.0.0.0** to **127.255.255.255**
+            - ***Class B*** - from **128.0.0.0** to **191.255.255.255**
+            - ***Class C*** - from **192.0.0.0** to **223.255.255.255**
+            - ***Class D*** - from **224.0.0.0** to **239.255.255.255**
+            - ***Class E*** - from **240.0.0.0** to **255.255.255.255**
+
+        - ***Subnet Masking*** - It means that the **subnet mask** is going to mask the network ID and leave the host ID for us to use. **Variable length subnets** mean that you can set your own length of the subnet ID. [The Internet Engineering Task Force (IETF)](https://www.ietf.org/) assigns the IP Addresses to the **ISP** without thinking of the classes of IP Addresses, but **based on REGIONS**.
+
+        - ***Reserved IP Addresses*** - 127.0.0.0/8 means that the first 8 bits are reserved, the rest can be used. This are known as **loopback addresses** as the processes which are running on the same machine will allow us to contact the same processes, i.e, our computer acts both as a server and a client at the same time. *Example*: Localhost (127.0.0.1). You can have as many number of loopback addresses as you want.
+
+        - ***Middle Boxes*** - This are devices that comes in between router and system endpoint, and interact with the datapackets. This can be present in network layer or even at transport layer. Example: **Firewall** and **NAT**.
+            
+            - **Firewall** - Two types are there - One connected to the global internet and the other connected to your own network. The packets coming to the network can be filtered and even modified (the headers and the destination can also be changed), flags can also be checked. There are stateless and stateful firewalls(uses cache so it's much faster).
+
+            - **NAT (Network Address Translation)** - [Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation) is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device. It is done to slow down the consumption of IP Addresses.
+            ![NAT](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/NAT_Concept-en.svg/1280px-NAT_Concept-en.svg.png)
+
         - ***Network Layer Protocols*** : The protocols used by network layer are - 
-            - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a 32-bit address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
+            - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a ***<u>32-bit</u>*** address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
+
+                IPv4 data packets has headers(IP Version, identification numbers, length of data, checksum, addresses, ttl(time to leave), etc.) of 20 bytes apart from the data. If ttl(time to leave) is crossed and the data acknowledgement does not return, the packet will be dropped.
 
                 <u>**Advantages :**</u>
 
@@ -538,6 +548,8 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
             <p>
 
             - **IPv6 (Internet Protocol version 6)** - IPv6 is the latest version of the Internet Protocol, a network layer protocol that possesses addressing and control information for enabling packets to be routed in the network. IPv6 was created to deal with IPv4 exhaustion. It increases the **IP address size from 32 bits to 128 bits** to support more levels of addressing.
+
+                *There are 8 numbers in the IPv6 and each number is a hexa-decimal number and is of 16 bits.*
 
                 <u>**Advantages :**</u>
 
@@ -563,31 +575,50 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
             </p>
             </br>
 
-6. **<u>Data link layer network protocols</u> :**
-    - **ARP (Address Resolution Protocol)** - The Address Resolution Protocol helps **map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network**. A table called an **ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address**. ***ARP offers the rules to make these correlations, and helps convert addresses in both directions.***
+    4. **<u>Data link layer</u> :** The data link layer is responsible for sending the data packets recieved from the network layer, over a physical layer.
 
-        <u>**Advantages :**</u>
+    - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. The DHCP server is a pool of IP Addresses and it assigns IP Addresses to the devices connected.
+    
+                In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
+    
+                <u>**Advantages :**</u>
 
-            • MAC addresses need not be known or memorized, as the ARP cache contains all the MAC addresses and maps them automatically with IPs.
+                    • Centralized management of IP addresses.
+                    • Seamless addition of new clients into a network.
+                    • Reuse of IP addresses, reducing the total number of IP addresses required.
 
-        <u>**Disadvantages :**</u>
+                <u>**Disadvantages :**</u>
 
-            • ARP is susceptible to security attacks called ARP spoofing attacks.
-            • When using ARP, sometimes a hacker might be able to stop the traffic altogether. This is also known as ARP denial-of-services.
-    <p>
+                    • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
+                    • Computers with DHCP cannot be used as servers, as their IPs change over time.         
 
-    - **SLIP (Serial Line IP)** - SLIP is used for **point-to-point serial connections using TCP/IP**. SLIP is used on **dedicated serial links**, and sometimes for **dial-up purposes**. SLIP is useful for **allowing mixes of hosts and routers to communicate with one another**; for example, **host-host, host-router, and router-router** are all common SLIP network configurations. SLIP is merely a **packet framing protocol**: It defines a **sequence of characters that frame IP packets on a serial line**. It does **NOT provide addressing, packet type identification, error detection or correction, or compression mechanisms.**
+    - **Data Link Layer Address** - Two computers at the data link layer communicate with each other using the data link layer address, might happen manually or automatically. ARP(Address Resolution Protocol) cache is used to find out the data link layer address. the frames(Data link layer address of sender and IP Address of destination along with the data) are sent to all the devices connected to the same network.
 
-        <u>**Advantages :**</u>
+    - **Data Link Layer Protocols** - The protocols used in data link layer are :
+        - **ARP (Address Resolution Protocol)** - The Address Resolution Protocol helps **map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network**. A table called an **ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address**. ***ARP offers the rules to make these correlations, and helps convert addresses in both directions.***
 
-            • Since it has a small overhead, it is suitable for usage in microcontrollers.
-            • It reuses existing dial-up connections and telephone lines.
-            • It's easy to deploy since it's based on the Internet Protocol.
+            <u>**Advantages :**</u>
 
-        <u>**Disadvantages :**</u>
+                • MAC addresses need not be known or memorized, as the ARP cache contains all the MAC addresses and maps them automatically with IPs.
 
-            • SLIP doesn't support automatic setup of network connections in multiple OSI layers at the same time.
-            • SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
+            <u>**Disadvantages :**</u>
+
+                • ARP is susceptible to security attacks called ARP spoofing attacks.
+                • When using ARP, sometimes a hacker might be able to stop the traffic altogether. This is also known as ARP denial-of-services.
+        <p>
+
+        - **SLIP (Serial Line IP)** - SLIP is used for **point-to-point serial connections using TCP/IP**. SLIP is used on **dedicated serial links**, and sometimes for **dial-up purposes**. SLIP is useful for **allowing mixes of hosts and routers to communicate with one another**; for example, **host-host, host-router, and router-router** are all common SLIP network configurations. SLIP is merely a **packet framing protocol**: It defines a **sequence of characters that frame IP packets on a serial line**. It does **NOT provide addressing, packet type identification, error detection or correction, or compression mechanisms.**
+
+            <u>**Advantages :**</u>
+
+                • Since it has a small overhead, it is suitable for usage in microcontrollers.
+                • It reuses existing dial-up connections and telephone lines.
+                • It's easy to deploy since it's based on the Internet Protocol.
+
+            <u>**Disadvantages :**</u>
+
+                • SLIP doesn't support automatic setup of network connections in multiple OSI layers at the same time.
+                • SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
 
 
     - **Physical Layer** - 
