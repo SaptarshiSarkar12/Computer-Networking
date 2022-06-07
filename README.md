@@ -582,18 +582,18 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     - **DHCP (Dynamic Host Configuration Protocol)** - DHCP is a **communication protocol** that enables network administrators to **automate the assignment of IP addresses** in a network. The DHCP server is a pool of IP Addresses and it assigns IP Addresses to the devices connected.
     
-                In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
+        In an IP network, every device connecting to the internet requires a unique IP. DHCP lets network admins distribute IP addresses from a central point and automatically send a new IP address when a device is plugged in from a different place in the network. DHCP works on a **client-server model**. </br>
     
-                <u>**Advantages :**</u>
+        <u>**Advantages :**</u>
 
-                    • Centralized management of IP addresses.
-                    • Seamless addition of new clients into a network.
-                    • Reuse of IP addresses, reducing the total number of IP addresses required.
+            • Centralized management of IP addresses.
+            • Seamless addition of new clients into a network.
+            • Reuse of IP addresses, reducing the total number of IP addresses required.
 
-                <u>**Disadvantages :**</u>
+        <u>**Disadvantages :**</u>
 
-                    • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
-                    • Computers with DHCP cannot be used as servers, as their IPs change over time.         
+            • Tracking internet activity becomes tedious, as the same device can have multiple IP addresses over a period of time.
+            • Computers with DHCP cannot be used as servers, as their IPs change over time.         
 
     - **Data Link Layer Address Or MAC Address** - MAC Address depend on the network interface. Two computers at the data link layer communicate with each other using the data link layer address, might happen manually or automatically. ARP(Address Resolution Protocol) cache is used to find out the data link layer address. the frames(Data link layer address of sender and IP Address of destination along with the data) are sent to all the devices connected to the same network.
 
