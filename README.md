@@ -507,14 +507,14 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     3. **<u>Network layer</u> :** Here, we work with routers. This layer helps in the data transmission from source to destination. The **routing table** is a table inside the router containing information about the topology of the network immediately around it. The data packet will contain the data along with the source network layer address. The router checks whether the data is for a device connected to it or not. If not, then the router checks it's **forwarding table(Or MAC Table)** to find in which direction and to which router the data should go. This goes on until the data recieves the correct router. This is called **hop-by-hop** architecture. This hoping happens at ISPs. Routing table contains multiple paths, whereas forwarding table contains one path, thus it's more faster. Every router has it's own network addresses or Logical addresses.
         - ***Parts Of IP Addresses*** -         
-            ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png)
+            ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png) </br>
             Here, the Network ID also known as Network address, tells which network your device resides in. The Device ID is your device address.
 
         - ***Control Plane*** - Control plane is used to create the routing tables. **Control Plane is like a very big graph** in which the **nodes are the routers** and the **edges are the links between routers**. Two types of routing are used to create routing tables :
             - **Static Routing** - Addresses are added ***manually***. This is time consuming and not adaptable easily.
             - **Dynamic Routing** - If there is a change in the addresses or network, addresses are modified ***automatically***. Algorithms used here include Bellman-Ford algorithm, Dijkstra's algorithm, etc.
 
-        - ***Subnetting*** - ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png)
+        - ***Subnetting*** - ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png) </br>
             Here, the Network ID is the subnet ID. All the devices connected to that router having that subnet ID, will have the same subnet IDs and differ only in Host IDs.
 
         - ***Class Of IP Addresses*** - There are five classes (basically denoting a range of IP addresses) of IP Addresses : 
