@@ -1,7 +1,8 @@
 <h1 align='center'>Computer Networking</h1>
 
-**Note :**
-This documentation is made from [Kunal Kushwaha's Computer Networking course](https://www.youtube.com/watch?v=IPvYjXCsTg8) and resources from the Internet.
+> [!IMPORTANT]
+> - This documentation is based on [Kunal Kushwaha's Computer Networking course](https://www.youtube.com/watch?v=IPvYjXCsTg8) and various online resources.
+> - It is also available on GitBook [here](https://saptarshi-sarkar.gitbook.io/notes/computer-networking).
 
 <h2 align='center'><i><u>Introduction</i></u></h2>
 
@@ -21,13 +22,13 @@ Every device which can connect to each other, have their own IP Addresses. It is
 </br>
 To get your IP Address, type -
 
-1. For **Windows** :
+1. For **Windows**:
 
         ipconfig
     
     in the command prompt.
 
-2. For **Mac** :
+2. For **Mac**:
     
         $ curl ifconfig.me
 
@@ -37,9 +38,9 @@ Internet Service Provider (ISP) gives you a modem/router which has a global IP A
 
 When we request a server (Google server in this case), it can see the global IP Address and not the Local IP Address. It sends the response and the modem/router decides which device to send back the response, using NAT (Network Address Translation) Protocol. **IP Adddress** decides which device to send the data and **Port Number** determines which application requested the data. 
 
-<h2 align='center'><i><u>Port Numbers</i></u></h2>
-What it means by Network speed?
-Suppose you are having an internet speed of -
+<h2 align='center'><i><u>What does it mean by Network speed?</i></u></h2>
+Suppose you are having an internet speed of
+
 - 1 mbps = 10<sup>6</sup> bits/second.
 - 1 gbps = 10<sup>9</sup> bits/second.
 - 1 kbps = 10<sup>3</sup> bits/second.
@@ -55,7 +56,7 @@ Data transmission happens in two ways -
 
 There are submarine cables lied in the oceans and waterbodies, connecting various places around the world. You can checkout the [submarine cable map website](https://www.submarinecablemap.com/).
 
-![submarine cable map website](https://cdn.hashnode.com/res/hashnode/image/upload/v1653998279577/pjYpnHM1r.jpeg)
+![submarine cable map website](./images/submarine-cable-map.jpeg)
 
 **Wired Connection -** Optical Fibre cables, coaxial cable </br>
 **Wireless connection -** Bluetooth, Wi-Fi, 3G, 4G, LTE, 5G
@@ -93,7 +94,7 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
     - Data is transmitted from one end to another end in a **single direction**.
     - If the network traffic is heavy, it increases collisions in the network. To avoid this, various protocols are used in the MAC layer known as Pure Aloha, Slotted Aloha, CSMA/CD, etc. </p>
 
-    ![Bus Topology Diagram](https://thumbs.dreamstime.com/b/bus-topology-diagram-29007878.jpg) <p>
+    ![Bus Topology Diagram](./images/bus-topology-diagram.jpg) <p>
 
 2. **Ring Topology -** Ring Topology is a network type in which each computer is connected to the next in a circular way.</br>
     **Advantages :**
@@ -104,7 +105,7 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
     - If one of the cable breaks, then the whole network crashes.
     - Lot of unnecessary calls are made.  <p>  
 
-    ![Ring Topology Diagram](https://www.networkstraining.com/wp-content/uploads/2018/10/ring-topology.jpg) <p>
+    ![Ring Topology Diagram](./images/ring-topology.jpg) <p>
 
 3. **Star Topology -** The star topology is a network type in which all computers are connected through a central device.</br>
     **Advantages :**
@@ -116,7 +117,7 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
     - Performance is based on the central device.
     - Star topology is very expensive to install. <p>
     
-    ![Star Topology Diagram](https://i2.wp.com/hmhub.me/wp-content/uploads/2019/08/star-Topology.jpg?fit=1200%2C600&ssl=1) <p>
+    ![Star Topology Diagram](./images/star-topology.jpg) <p>
 
 4. **Tree Topology -** The Tree Topology is a network type where many star topologies are connected using a bus topology.</br>
     **Advantages :**
@@ -127,7 +128,7 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
     - A tree topology relies heavily on its main bus cable.
     - The installation of a tree topology is difficult.<p>
 
-    ![Tree Topology Diagram](https://image.slidesharecdn.com/dc-lec-03topologies-150513143944-lva1-app6892/95/dc-lec03-topologies-34-638.jpg?cb=1431528194) <p>
+    ![Tree Topology Diagram](./images/tree-topology.jpg) <p>
 
 5. **Mesh Topology -** The Mesh Topology is a network type where each and every computers are connected to each other. </br>
     **Advantages :**
@@ -139,7 +140,7 @@ In India, Tier-1 ISP is TATA, BSNL, etc.
     - Time-consuming to build and maintain.
     - High risk of redundant connection. <p>
 
-    ![Mesh Topology Diagram](https://techprojournal.com/wp-content/uploads/2020/08/mesh-topology-1-696x348.jpg) <p>
+    ![Mesh Topology Diagram](./images/mesh-topology.jpg) <p>
 
 <h2 align='center'><i><u>Structure Of The Network</u></i></h2>
 
@@ -197,7 +198,7 @@ Here are those devices in details :
     - LTE Repeater
     - Optical Repeater <p>
     
-    ![Repeater](https://th.bing.com/th/id/R.7a67341a896ba87e216748a90b8732c2?rik=m3CPQ1%2bPq7doPA&riu=http%3a%2f%2fd1unzhqf5a606m.cloudfront.net%2fimages%2flarge%2fhoneywell-wrex-wifi-repeater-extender.png%3f1389738305&ehk=LlBNJN1QOEwZQU1qEoYw%2bEnut%2bOG0hZ3WwEIZXhZibE%3d&risl=&pid=ImgRaw&r=0)
+    ![Repeater](./images/repeater.png)
 
 2. <u>**Modems**</u> - Modems are electronic devices which convert digital information of computers into analog signals and are also capable of again converting the analog signals to the digital information at the receiving end. Modems can be classified in various ways. Some of the common types include - **half-duplex modem**, **full-duplex modem**, **2-wire modem**, **4-wire modem**, **synchronous** and **asynchronous modem**.
 Modem stands for **Modulator and Demodulator device** which assists computer in transferring data and information over telephone lines. This is done by changing the **digital data into
@@ -219,17 +220,17 @@ There are modems having **Asymmetric digital subscriber line (ADSL)** and some n
         - Synchronous Modem
         - Asynchronous Modem <p>
 
-    ![Modem](https://www.samm.com/userfiles/editor/image/optical-modem-gpon-fk-ont-g400b-poe-s2-furukawa-2.png)
+    ![Modem](./images/modem.png)
 
 
 3. <u>**Gateway**</u> - A gateway is not a hardware device. It is **software firmware** which saves the **configuration setting of a device**. Mostly the gateway address in routers is **192.168.0.1** or **192 168.1.1**.
 Its acts as a "**gate**" between two networks. It may be a router, firewall, server, or other device that enables traffic to flow in and out of the network. While a gateway protects
 the nodes within network, it itself is also a node.
 
-    ![Gateway](https://5.imimg.com/data5/JA/YO/MY-10051435/industrial-iot-gateway-with-lora-500x500.png)
+    ![Gateway](./images/gateway.webp)
 
 4. <u>**WIFI-Routers**</u> - Similar to a modem with the additional feature of Wireless connectivity called as "WIFI ".It generally has 4 ethernet ports and it is having routing DHCP to connect 240 pc and devices providing internet with wired and wireless options.
-    ![WiFi Router](https://www.netgear.com/images/Products/Networking/WirelessRouters/R6230/R6230_Hero_Transparent.png)
+    ![WiFi Router](./images/router.png)
 
 5. <u>**Hubs**</u> - It is basically a multiport hub. A hub is a device to which all the devices sharing a physical network can be physically connected to form a "Local Area Network" or "LAN". Hubs enable the electric currents from a computer to pass to all other devices connected to it. Since a hub was the electronic equivalent of shouting in a room as necessary, as the number of devices increased, the number of collisions increased and LAN performance ground to a hault. In a hub-centric environment, the message packets being sent by each device that is connected to the hub can be "seen" by every other
 device on the hub whether they are involved in the conversation or not. So, hubs can facilitate message eavesdropping.
@@ -239,7 +240,7 @@ device on the hub whether they are involved in the conversation or not. So, hubs
     - **Passive Hub** :- These are the hubs which **collect wiring from nodes** and **power supply from active hub**. These hubs **relay signals** onto the network **without cleaning and boosting them** and **can't be used to extend distance between nodes**.
     - **Intelligent Hubs** :- An intelligent hub can help in **troubleshooting by pinpointing** the actual location of the problem and help **identify the root cause and resolution**. It is **very adaptable to different technologies without any need to change its configuration**. The intelligent hub performs different functions such as **bridging, routing, switching and network management**.
 
-    ![Hub](https://eu.dlink.com/uk/en/products/-/media/product-pages/dub/h7/g1/dubh7g1image-lfrontpowerlight.png)
+    ![Hub](./images/hub.png)
 
 6. <u>**Switches**</u> - A switch serves as a controller, enabling networked devices to talk to each other
 efficiently. A switches use to connect computers, printers, phones, cameras, lights, and servers in a building or campus.
@@ -249,7 +250,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     - **Managed switches** :- A managed network switch is configurable, offering greater security, flexibility and capacity than an unmanaged switch. You can monitor and adjust a managed switch locally or remotely, to give you greater network control.
 
-        ![Switch](https://hw-egypt.com/wp-content/uploads/2017/11/1450367494000_1204486.png)
+        ![Switch](./images/switch.png)
 
 7. <u>**Routers**</u> - When a device in a Local Area Network needs to communicate with a device on another LAN, it must send that traffic to a specialized device connected to the LAN called a "router" whose purpose is to find the best path for the message to take to arrive at the intended target device, and to send the message along its way following that path.
 
@@ -265,7 +266,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
     - Inter-provider Border Router
     - Core Router
 
-    ![Router](https://www.netgear.com/images/Products/Networking/WirelessRouters/R6230/R6230_Front_Transparent.png)
+    ![Router](./images/router.png)
 
 8. <u>**Brouter**</U> - It is also known as bridging router which is a device which combines features of both bridge and router. It can work either at data link layer or at network layer. Working as router, it is capable of routing packets across networks and working as bridge, it is capable of filtering local area network traffic.
     
@@ -304,7 +305,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
     - **Data Link Layer** - It helps to directly communicate with the computers. Physical Addressing happens here. It is the assigning of MAC Address of the sender and reciever's device to the data packets, forming **frames**. MAC address is a 12 digit alphanumeric number of the network interface of your device. It also controls how the data is recieved using Media Access Control.
     - **Physical Layer** - This is the hardware layer which transports the data through wires to the reciever.<p>
 
-    ![OSI Model](https://miro.medium.com/max/1200/1*17Zz6v0HWIzgiOzQYmO6lA.jpeg) <p>
+    ![OSI Model](./images/osi-model.jpeg) <p>
 
 - <h3 align='left'><b>TCP/IP Model :</b></h3>
     This model was developed by ARPA. There are 5 layers in this model ~
@@ -315,7 +316,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
                 <u>**Classes of Domains**</u>
 
-                ![Part/Class of Domain](https://searchfacts.com/wp-content/uploads/2019/07/domain-name-parts.png)
+                ![Part/Class of Domain](./images/parts-of-domain.png)
 
                 - **Top-level domain** - Root DNS Servers. They have top-level domains like .io, .org, .com, etc. The authorities maintaing this root DNS server can be seen in this website - [Root-servers.org](https://root-servers.org/). The top-level domains are registered by [ICANN](https://www.icann.org/) (The Internet Corporation for Assigned Names and Numbers).
 
@@ -507,14 +508,14 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
 
     3. **<u>Network layer</u> :** Here, we work with routers. This layer helps in the data transmission from source to destination. The **routing table** is a table inside the router containing information about the topology of the network immediately around it. The data packet will contain the data along with the source network layer address. The router checks whether the data is for a device connected to it or not. If not, then the router checks it's **forwarding table(Or MAC Table)** to find in which direction and to which router the data should go. This goes on until the data recieves the correct router. This is called **hop-by-hop** architecture. This hoping happens at ISPs. Routing table contains multiple paths, whereas forwarding table contains one path, thus it's more faster. Every router has it's own network addresses or Logical addresses.
         - ***Parts Of IP Addresses*** -         
-            ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png) </br>
+            ![Parts Of IP Addresses](./images/parts-of-ip-address.png) </br>
             Here, the Network ID also known as Network address, tells which network your device resides in. The Device ID is your device address.
 
         - ***Control Plane*** - Control plane is used to create the routing tables. **Control Plane is like a very big graph** in which the **nodes are the routers** and the **edges are the links between routers**. Two types of routing are used to create routing tables :
             - **Static Routing** - Addresses are added ***manually***. This is time consuming and not adaptable easily.
             - **Dynamic Routing** - If there is a change in the addresses or network, addresses are modified ***automatically***. Algorithms used here include Bellman-Ford algorithm, Dijkstra's algorithm, etc.
 
-        - ***Subnetting*** - ![Parts Of IP Addresses](https://www.howtogeek.com/wp-content/uploads/2018/01/ximage-2-1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.-bu1fG8j7u.png) </br>
+        - ***Subnetting*** - ![Parts Of IP Addresses](./images/ip-address-and-subnet-mask.jpeg) </br>
             Here, the Network ID is the subnet ID. All the devices connected to that router having that subnet ID, will have the same subnet IDs and differ only in Host IDs.
 
         - ***Class Of IP Addresses*** - There are five classes (basically denoting a range of IP addresses) of IP Addresses : 
@@ -533,7 +534,7 @@ efficiently. A switches use to connect computers, printers, phones, cameras, lig
             - **Firewall** - Two types are there - One connected to the global internet and the other connected to your own network. The packets coming to the network can be filtered and even modified (the headers and the destination can also be changed), flags can also be checked. There are stateless and stateful firewalls(uses cache so it's much faster).
 
             - **NAT (Network Address Translation)** - [Network address translation (NAT)](https://en.wikipedia.org/wiki/Network_address_translation) is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device. It is done to slow down the consumption of IP Addresses.
-            ![NAT](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/NAT_Concept-en.svg/1280px-NAT_Concept-en.svg.png)
+            ![NAT](./images/network-address-translation.png)
 
         - ***Network Layer Protocols*** : The protocols used by network layer are - 
             - **IP (Internet Protocol (IPv4))** - IPv4 is a network layer protocol that contains **addressing and control information**, which helps packets be routed in a network. **IP works in tandem with TCP** to deliver data packets across the network. Under IP, each host is assigned a ***<u>32-bit</u>*** address comprised of two major parts: **the network number and host number**. The **network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin**. The **IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.**
